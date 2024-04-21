@@ -13,22 +13,23 @@ def construct_url_from_filename(filename):
 def build_index(directory):
     corpus = []
     document_metadata = []
+    doc_id = 1  # Starting document ID
     
     for filename in os.listdir(directory):
-        if filename.endswith('_tokens.txt'):
+        if filename.endswith('.html'):
             file_path = os.path.join(directory, filename)
             with open(file_path, 'r', encoding='utf-8') as file:
-                text = file.read()
+                url = file.readline().strip()  # Read the first line to get the URL
+                text = file.read()  # Read the rest of the file for the document content
                 corpus.append(text)
-            
-            original_filename = filename.replace('_tokens.txt', '.html')
-            url = construct_url_from_filename(original_filename)
-            document_metadata.append({'filename': original_filename, 'url': url})
-            
+
+            document_metadata.append({'doc_id': doc_id, 'filename': filename, 'url': url})
+            doc_id += 1  # Increment the document ID for the next document
+
     if not corpus:
         print("No documents to process.")
         return
-
+    
     vectorizer = TfidfVectorizer()
     tfidf_matrix = vectorizer.fit_transform(corpus)
     #print(len(tfidf_matrix))
@@ -65,6 +66,7 @@ if __name__ == "__main__":
         build_index(directory)
 
     vectorizer, tfidf_matrix, document_metadata = load_index()
-    query = "heartbreaking work"
+    '''query = "heartbreaking work"
     results = search(query, vectorizer, tfidf_matrix)
     # Add post-processing to format the search results if needed.
+'''

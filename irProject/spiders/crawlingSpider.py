@@ -4,6 +4,7 @@ from scrapy.utils.project import get_project_settings
 import os
 from bs4 import BeautifulSoup
 from nltk.tokenize import word_tokenize
+from ..document_tokenizer import tokenize_directory
 
 class ContentSpider(scrapy.Spider):
     name = 'content_spider'
@@ -22,6 +23,11 @@ class ContentSpider(scrapy.Spider):
     excluded_urls = ['https://www.1mg.com/editorial-policy-processes/']
     saved_files = []
     
+    def spider_closed(self, spider):
+        # This method is called when the spider closes
+        self.log('Spider closed: %s' % spider.name)
+        document_list = tokenize_directory(self.output_dir)
+        self.log('Document tokenization completed. Documents: {}'.format(len(document_list)))
     
     def parse(self, response):
         # Ensure the output directory exists
