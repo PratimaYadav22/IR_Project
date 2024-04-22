@@ -10,14 +10,14 @@ Indexer (Scikit-Learn-based): After crawling, documents are indexed using a TF-I
 Query Processor (Flask-based): A web service that allows users to submit queries and retrieve documents based on relevance.
 
 **Design**
-•	System Capabilities: The crawler is configured with auto-throttle to manage request rates, ensuring server-friendly interactions. The indexer supports cosine similarity for relevance scoring. The query processor handles JSON requests and supports error checking and response ranking.
-•	Interactions: Each module interacts through well-defined interfaces, with data passing seamlessly from the crawler to the indexer, and indexed results being queried through the processor.
-•	Integration: The system integrates data handling and processing capabilities to provide a user-friendly querying interface via a web service.
+System Capabilities: The crawler is configured with auto-throttle to manage request rates, ensuring server-friendly interactions. The indexer supports cosine similarity for relevance scoring. The query processor handles JSON requests and supports error checking and response ranking.
+Interactions: Each module interacts through well-defined interfaces, with data passing seamlessly from the crawler to the indexer, and indexed results being queried through the processor.
+Integration: The system integrates data handling and processing capabilities to provide a user-friendly querying interface via a web service.
 
 **Architecture**
-•	Software Components: The system uses Scrapy for crawling, BeautifulSoup for HTML parsing, Scikit-Learn for indexing, and Flask for the web interface.
-•	Interfaces: Data flows through the system via files (HTML and pickle files) and through in-memory data structures (TF-IDF matrices).
-•	Implementation: Each module is implemented as a separate Python script, encapsulating specific functionalities, which are then integrated to function as a unified service.
+Software Components: The system uses Scrapy for crawling, BeautifulSoup for HTML parsing, Scikit-Learn for indexing, and Flask for the web interface.
+Interfaces: Data flows through the system via files (HTML and pickle files) and through in-memory data structures (TF-IDF matrices).
+Implementation: Each module is implemented as a separate Python script, encapsulating specific functionalities, which are then integrated to function as a unified service.
 
 **Operation**
 •	Commands: System operations are primarily executed through Python scripts, with the Flask app serving the query interface.
