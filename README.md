@@ -76,8 +76,10 @@ Query Processor (Flask-based): A web service that allows users to submit queries
 1. Framework: Testing is conducted using Python’s unittest framework for modular tests of each component.
 2. Coverage: Tests cover functionalities such as crawling depth, page count compliance, indexing accuracy, and query response correctness.
 
-**Documentation**: Inline comments and README files explain usage and configuration.
-**Dependencies:** Open-source Python libraries (Scrapy, Scikit-Learn, Flask, etc.).
+# **Documentation**: 
+Inline comments and README files explain usage and configuration.
+# **Dependencies:** 
+Open-source Python libraries (Scrapy, Scikit-Learn, Flask, etc.).
 
 # **Bibliography**
 "Scrapy 2.5 documentation," Scrapy. [Online]. Available: https://docs.scrapy.org/en/latest/
