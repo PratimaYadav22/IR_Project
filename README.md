@@ -22,22 +22,8 @@ pip install flask
 1. **Run below query to run the app on cli:**
 python irProject\\\query_processor.py --cli --query 'will his wise advice give her the courage'
 
-**Result output:**
-![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/9b7d01d9-20dc-4b81-9441-364d510a11d8)
-
 2. **Run below query to run the app on web:**
 python irProject\\\query_processor.py
-
-The project has also been rendered on html. 
-For running the application on web page, simply run query_processor.py. It will direct to the localhost.
-Below is the output for the same:
-![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/1aa569f7-4d9b-487d-83a9-15f91d4cdac5)
-
-![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/805835ca-fb33-4727-bcfa-4d2c27d6cda4)
-
-Output:
-![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/34af2d24-870a-4b50-8b7d-7cf816610921)
-
 
 # **Abstract**
 This project aimed to develop a robust system capable of efficiently crawling, indexing, and querying web documents without the use of a web interface for user interactions. Utilizing Python and several key libraries, the system automates the downloading of HTML content from specific domains and indexes this content for quick retrieval using advanced text processing techniques. Future developments will explore enhanced natural language processing features to improve the accuracy of query results and expand the system to handle a wider range of document types and languages.
@@ -116,3 +102,25 @@ Open-source Python libraries (Scrapy, Scikit-Learn, Flask, etc.).
 2. "Beautiful Soup Documentation," Crummy. [Online]. Available: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 3. "scikit-learn: machine learning in Python," Scikit-Learn. [Online]. Available: https://scikit-learn.org/stable/
 4. "Flask Documentation," Pallets Projects. [Online]. Available: https://flask.palletsprojects.com/en/2.0.x/
+
+
+
+**Steps for running the application:**
+1. **Run below query to run the app on cli:**
+python irProject\\\query_processor.py --cli --query 'will his wise advice give her the courage'
+
+**Result output:**
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/9b7d01d9-20dc-4b81-9441-364d510a11d8)
+
+2. **Run below query to run the app on web:**
+python irProject\\\query_processor.py
+
+The project has also been rendered on html. 
+For running the application on web page, simply run query_processor.py. It will direct to the localhost.
+Below is the output for the same:
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/1aa569f7-4d9b-487d-83a9-15f91d4cdac5)
+
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/805835ca-fb33-4727-bcfa-4d2c27d6cda4)
+
+Output:
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/34af2d24-870a-4b50-8b7d-7cf816610921)
