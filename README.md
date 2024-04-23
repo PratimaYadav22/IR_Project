@@ -22,26 +22,20 @@ pip install flask
 First run the flask application (query_processor_cli.py)
 When the application is running open powershell terminal and run below command one after the other:
 
-1. **Define the query:**
-$query = @{
-  query = 'will his wise advice give her the courage'
-}
-2. **Convert the query to JSON:**
-$json = $query | ConvertTo-Json
-
-3. **Make the POST request:**
-$response = Invoke-WebRequest -Uri 'http://127.0.0.1:5000/search' -Method Post -Body $json -ContentType 'application/json'
-
-4. **Output the response content**
-$response.Content
+**Run below query to run the app on cli:**
+python irProject\\\query_processor.py --cli --query 'will his wise advice give her the courage'
 
 **Result output:**
-![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/567accc8-ad53-4fc3-b39b-9fe09ac65f28)
-
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/9b7d01d9-20dc-4b81-9441-364d510a11d8)
 
 The project has also been rendered on html. Below is the output for the same:
-For running the application on web page, simply run query_processor_html.py. It will direct to the localhost.
-![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/9b24b7d2-325a-464a-a027-b7325e3741d6)
+For running the application on web page, simply run query_processor.py. It will direct to the localhost.
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/1aa569f7-4d9b-487d-83a9-15f91d4cdac5)
+
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/805835ca-fb33-4727-bcfa-4d2c27d6cda4)
+
+Output:
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/34af2d24-870a-4b50-8b7d-7cf816610921)
 
 
 # **Abstract**
@@ -49,9 +43,22 @@ This project aimed to develop a robust system capable of efficiently crawling, i
 
 # **Overview**
 The proposed system consists of three interconnected modules:
-Web Crawler (Scrapy-based): This module downloads web documents in HTML format, targeting specific allowed domains with maximum pages and depth limit to be crawled.
-Indexer (Scikit-Learn-based): After crawling, documents are indexed using a TF-IDF vectorization for efficient retrieval.
-Query Processor (Flask-based): A web service that allows users to submit queries and retrieve documents based on relevance.
+1. Web Crawler (Scrapy-based): This module downloads web documents in HTML format, targeting specific allowed domains with maximum pages and depth limit to be crawled.
+2. Indexer (Scikit-Learn-based): After crawling, documents are indexed using a TF-IDF vectorization for efficient retrieval.
+3. Query Processor (Flask-based): A web service that allows users to submit queries and retrieve documents based on relevance.
+
+**Web Crawler (Scrapy-based):**
+Purpose and Functionality:
+1. Objective: To autonomously navigate and download web documents from specified domains.
+2. peration: The crawler starts from a seed URL and explores pages within the predefined constraints of maximum depth and number of pages to ensure focused and efficient data collection.
+3. Custom Settings:
+**CLOSESPIDER_PAGECOUNT**: Limits the number of pages to crawl, preventing excessive bandwidth use and focusing the crawl on relevant content.
+**AUTOTHROTTLE_ENABLED:** Dynamically adjusts the speed of crawling based on the server response to maintain polite crawling behavior.
+**DEPTH_LIMIT:** Restricts the depth of navigation from the seed page, which helps in managing the scope of the crawl and avoiding unnecessary subdomains or external sites.
+4. Technical Implementation:
+
+Implemented using Scrapy, a robust framework that provides built-in support for collecting data from websites using spider routines that simulate browsing from a user's perspective.
+Uses selectors and rules to intelligently navigate through hyperlinks and gather HTML content which is then saved for subsequent indexing.
 
 # **Design**
 1. System Capabilities: The crawler is configured with auto-throttle to manage request rates, ensuring server-friendly interactions. The indexer supports cosine similarity for relevance scoring. The query processor handles JSON requests and supports error checking and response ranking.
