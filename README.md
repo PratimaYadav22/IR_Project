@@ -91,6 +91,10 @@ Purpose and Functionality:
 # **Test Cases**
 1. Framework: Testing is conducted using Python’s unittest framework for modular tests of each component.
 2. Coverage: Tests cover functionalities such as crawling depth, page count compliance, indexing accuracy, and query response correctness.
+3. Testcase for TF-IDF vectorization of documents.
+4. Testcase for cosine similarity calculation accuracy.
+5. Testcase for response to a valid query.
+6. Testcase error handling for invalid queries.
 
 # **Documentation**: 
 Inline comments and README files explain usage and configuration.
@@ -103,7 +107,7 @@ Open-source Python libraries (Scrapy, Scikit-Learn, Flask, etc.).
 3. "scikit-learn: machine learning in Python," Scikit-Learn. [Online]. Available: https://scikit-learn.org/stable/
 4. "Flask Documentation," Pallets Projects. [Online]. Available: https://flask.palletsprojects.com/en/2.0.x/
 
-
+# Screnshots of the results
 
 **Steps for running the application:**
 1. **Run below query to run the app on cli:**
