@@ -38,6 +38,10 @@ $response.Content
 **Result output:**
 ![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/59a8e83d-2aa6-4626-81f3-2fbb604a83a2)
 
+The project has also been rendered on html. Below is the output for the same:
+For running the application on web page, simply run query_processor_html.py. It will direct to the localhost.
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/9b24b7d2-325a-464a-a027-b7325e3741d6)
+
 
 # **Abstract**
 This project aimed to develop a robust system capable of efficiently crawling, indexing, and querying web documents without the use of a web interface for user interactions. Utilizing Python and several key libraries, the system automates the downloading of HTML content from specific domains and indexes this content for quick retrieval using advanced text processing techniques. Future developments will explore enhanced natural language processing features to improve the accuracy of query results and expand the system to handle a wider range of document types and languages.
