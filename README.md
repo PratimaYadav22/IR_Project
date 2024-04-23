@@ -24,7 +24,7 @@ When the application is running open powershell terminal and run below command o
 
 1. **Define the query:**
 $query = @{
-  query = 'heartbreaking work'
+  query = 'will his wise advice give her the courage'
 }
 2. **Convert the query to JSON:**
 $json = $query | ConvertTo-Json
@@ -36,7 +36,8 @@ $response = Invoke-WebRequest -Uri 'http://127.0.0.1:5000/search' -Method Post -
 $response.Content
 
 **Result output:**
-![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/59a8e83d-2aa6-4626-81f3-2fbb604a83a2)
+![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/567accc8-ad53-4fc3-b39b-9fe09ac65f28)
+
 
 The project has also been rendered on html. Below is the output for the same:
 For running the application on web page, simply run query_processor_html.py. It will direct to the localhost.
