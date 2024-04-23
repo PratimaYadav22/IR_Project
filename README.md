@@ -19,17 +19,18 @@ pip install scikit-learn
 pip install flask
 
 **Steps for running the application:**
-First run the flask application (query_processor_cli.py)
-When the application is running open powershell terminal and run below command one after the other:
-
-**Run below query to run the app on cli:**
+1. **Run below query to run the app on cli:**
 python irProject\\\query_processor.py --cli --query 'will his wise advice give her the courage'
 
 **Result output:**
 ![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/9b7d01d9-20dc-4b81-9441-364d510a11d8)
 
-The project has also been rendered on html. Below is the output for the same:
+2. **Run below query to run the app on web:**
+python irProject\\\query_processor.py
+
+The project has also been rendered on html. 
 For running the application on web page, simply run query_processor.py. It will direct to the localhost.
+Below is the output for the same:
 ![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/1aa569f7-4d9b-487d-83a9-15f91d4cdac5)
 
 ![image](https://github.com/PratimaYadav22/IR_Project/assets/143662393/805835ca-fb33-4727-bcfa-4d2c27d6cda4)
