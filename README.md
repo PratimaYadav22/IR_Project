@@ -52,13 +52,30 @@ Purpose and Functionality:
 1. Objective: To autonomously navigate and download web documents from specified domains.
 2. peration: The crawler starts from a seed URL and explores pages within the predefined constraints of maximum depth and number of pages to ensure focused and efficient data collection.
 3. Custom Settings:
-**CLOSESPIDER_PAGECOUNT**: Limits the number of pages to crawl, preventing excessive bandwidth use and focusing the crawl on relevant content.
-**AUTOTHROTTLE_ENABLED:** Dynamically adjusts the speed of crawling based on the server response to maintain polite crawling behavior.
-**DEPTH_LIMIT:** Restricts the depth of navigation from the seed page, which helps in managing the scope of the crawl and avoiding unnecessary subdomains or external sites.
+   **CLOSESPIDER_PAGECOUNT**: Limits the number of pages to crawl, preventing excessive bandwidth use and focusing the crawl on relevant content.
+   **AUTOTHROTTLE_ENABLED:** Dynamically adjusts the speed of crawling based on the server response to maintain polite crawling behavior.
+   **DEPTH_LIMIT:** Restricts the depth of navigation from the seed page, which helps in managing the scope of the crawl and avoiding unnecessary subdomains or external sites.
 4. Technical Implementation:
+   Implemented using Scrapy, a robust framework that provides built-in support for collecting data from websites using spider routines that simulate browsing from a user's perspective.
+   Uses selectors and rules to intelligently navigate through hyperlinks and gather HTML content which is then saved for subsequent indexing.
 
-Implemented using Scrapy, a robust framework that provides built-in support for collecting data from websites using spider routines that simulate browsing from a user's perspective.
-Uses selectors and rules to intelligently navigate through hyperlinks and gather HTML content which is then saved for subsequent indexing.
+**Indexer (Scikit-Learn-based):**
+Purpose and Functionality:
+1. Objective: To process the HTML documents downloaded by the crawler and construct an index using TF-IDF vectorization, facilitating efficient and relevant retrieval of documents.
+2. Operation: Reads the raw HTML files, extracts text using BeautifulSoup, and then applies natural language processing techniques to tokenize and vectorize the content.
+3. Technical Implementation:
+   Utilizes the Scikit-Learn library, specifically its TfidfVectorizer, to transform text into a numerical format that represents the importance (weight) of words within the documents in relation to the corpus as a whole.
+   The indexer creates a sparse matrix where each row corresponds to a document and each column represents a word from the corpus, with TF-IDF values as matrix entries.
+   This matrix serves as the foundation for querying and similarity comparisons using cosine similarity metrics to determine document relevance.
+
+**Query Processor (Flask-based):**
+Purpose and Functionality:
+1. Objective: To provide an interface for users to submit textual queries and retrieve documents ranked by relevance based on the indexed data.
+2. Operation: Receives user queries, processes them against the indexed data, and returns a list of documents that best match the query criteria.
+3. Technical Implementation:
+   Built using Flask, a lightweight web framework suitable for setting up web applications quickly and with minimal code.
+   Queries are received via HTTP POST requests, processed using the indexed TF-IDF matrix to find similarity scores, and results are returned in a structured format, often JSON, listing the documents that most closely match the user's search terms.
+   The query processing is designed to handle errors and validate inputs to ensure that only meaningful queries are processed, optimizing the retrieval efficiency and user experience.
 
 # **Design**
 1. System Capabilities: The crawler is configured with auto-throttle to manage request rates, ensuring server-friendly interactions. The indexer supports cosine similarity for relevance scoring. The query processor handles JSON requests and supports error checking and response ranking.
